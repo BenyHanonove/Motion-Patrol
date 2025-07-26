@@ -1,4 +1,23 @@
 {
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@assets/*": ["./src/assets/*"],
+      "@components/*": ["./src/components/*"],
+      "@config": ["./src/config/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@mappers/*": ["./src/data/mappers/*"],
+      "@models/*": ["./src/data/models/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@providers/*": ["src/data/providers/*"],
+      "@router": ["./src/config/router/index.ts"],
+      "@services/*": ["src/data/services/*"],
+      "@slice/*": ["./src/store/slice/*"],
+      "@store": ["./src/store/index.ts"],
+      "@theme": ["./src/config/theme/index.ts"],
+      "@utils/*": ["./src/utils/*"]
+    }
+  },
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },

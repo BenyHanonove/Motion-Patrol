@@ -1,0 +1,48 @@
+{
+  "dark": {
+    "mode": "dark",
+    "primary": {
+      "main": "#00ff99"
+    },
+    "secondary": {
+      "main": "#00cc66"
+    },
+    "background": {
+      "default": "#0a0f0a",
+      "paper": "#1a1f1a"
+    },
+    "text": {
+      "primary": "#ccffcc",
+      "secondary": "#66ff99"
+    },
+    "warning": {
+      "main": "#ffcc00"
+    },
+    "error": {
+      "main": "#ff3b3b"
+    }
+  },
+  "light": {
+    "mode": "light",
+    "primary": {
+      "main": "#2e7d32"
+    },
+    "secondary": {
+      "main": "#81c784"
+    },
+    "background": {
+      "default": "#f1fff0",
+      "paper": "#e0f2e9"
+    },
+    "text": {
+      "primary": "#0a0a0a",
+      "secondary": "#2e7d32"
+    },
+    "warning": {
+      "main": "#fbc02d"
+    },
+    "error": {
+      "main": "#d32f2f"
+    }
+  }
+}
