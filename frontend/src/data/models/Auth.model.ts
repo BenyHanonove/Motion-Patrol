@@ -15,4 +15,8 @@ interface IRegisterModel {
   config: string;
 }
 
-export type { AuthModel, ILoginModel, IRegisterModel };
+interface IRestoreModel {
+  email: string;
+}
+
+export type { AuthModel, ILoginModel, IRegisterModel, IRestoreModel };

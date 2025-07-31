@@ -1,16 +1,16 @@
 import React, { useRef } from "react";
 import FullscreenIcon from "@mui/icons-material/Fullscreen";
-import { Box, Typography, Card, CardContent, IconButton } from "@mui/material";
+import { Box, Typography, CardContent, IconButton } from "@mui/material";
 
 // Import interfaces
 import type { CameraModel } from "@models/Camera.model";
 
-interface CameraProps {
+interface CameraCardProps {
   camera: CameraModel;
   index: number;
 }
 
-const Camera: React.FC<CameraProps> = ({ camera, index }) => {
+const CameraCard: React.FC<CameraCardProps> = ({ camera, index }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleFullscreen = () => {
@@ -26,7 +26,7 @@ const Camera: React.FC<CameraProps> = ({ camera, index }) => {
   };
 
   return (
-    <Card
+    <Box
       sx={{
         flex: 1,
       }}
@@ -63,8 +63,8 @@ const Camera: React.FC<CameraProps> = ({ camera, index }) => {
           />
         </Box>
       </CardContent>
-    </Card>
+    </Box>
   );
 };
 
-export default Camera;
+export default CameraCard;

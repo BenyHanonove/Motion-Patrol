@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 
 // Import theme hook and type
-import useAppTheme from "@hooks/useAppTheme";
+import useAppTheme from "@hooks/useAppTheme.hook";
 import type { Theme } from "@mui/material/styles";
 
 // Import icons
@@ -19,7 +19,7 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import type { FormFieldModel } from "@models/FormField.model";
 
 // Import custom hooks
-import useAppNavigation from "@hooks/useAppNavigation";
+import useAppNavigation from "@hooks/useAppNavigation.hook";
 
 interface AuthFormProps {
   header: string;

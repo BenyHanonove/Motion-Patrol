@@ -1,8 +1,12 @@
 // Import interfaces
-import type { ILoginModel, IRegisterModel } from "@models/Auth.model";
+import type {
+  ILoginModel,
+  IRegisterModel,
+  IRestoreModel,
+} from "@models/Auth.model";
 
 // Generic return type for validation
-export interface ValidationResult {
+interface ValidationResult {
   isValid: boolean;
   errors: Partial<Record<keyof ILoginModel | keyof IRegisterModel, string>>;
 }
@@ -40,6 +44,19 @@ export function validateRegister(data: IRegisterModel): ValidationResult {
     errors.config = "Please confirm your password";
   } else if (data.config !== data.password) {
     errors.config = "Passwords do not match";
+  }
+
+  return { isValid: Object.keys(errors).length === 0, errors };
+}
+
+// Restore validator
+export function validateRestore(data: IRestoreModel): ValidationResult {
+  const errors: ValidationResult["errors"] = {};
+
+  if (!data.email.trim()) {
+    errors.email = "Email is required";
+  } else if (!emailRegex.test(data.email)) {
+    errors.email = "Invalid email format";
   }
 
   return { isValid: Object.keys(errors).length === 0, errors };

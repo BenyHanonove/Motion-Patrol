@@ -6,7 +6,7 @@ import SecureHeader from "@components/common/SecureHeader.tsx";
 import AuthForm from "@components/auth/AuthForm";
 
 // Redux
-import { useAppDispatch } from "@hooks/redux";
+import { useAppDispatch } from "@hooks/redux.hook";
 import { showSnackbar } from "@slice/snackbar.slice";
 
 // Import form validator
@@ -20,7 +20,7 @@ import type { ILoginModel } from "@models/Auth.model";
 import AuthProvider from "@providers/auth.provider";
 
 // Import app navigation hook
-import useAppNavigation from "@hooks/useAppNavigation";
+import useAppNavigation from "@hooks/useAppNavigation.hook";
 
 const LoginPage: React.FC = () => {
   const { navigateToPath } = useAppNavigation();

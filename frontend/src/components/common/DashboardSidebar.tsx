@@ -18,8 +18,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 
 // Import custom hooks
-import useAppTheme from "@hooks/useAppTheme";
-import useAppNavigation from "@hooks/useAppNavigation";
+import useAppTheme from "@hooks/useAppTheme.hook";
+import useAppNavigation from "@hooks/useAppNavigation.hook";
 
 // Import sidebar lists
 import {
@@ -88,7 +88,7 @@ const DashboardSidebar: React.FC = () => {
 
   return (
     // Wrapper with background
-    <Box sx={{ backgroundColor: appTheme.theme.palette.background.paper }}>
+    <Box>
       {/* Mobile hamburger toggle */}
       {isMobile && (
         <Toolbar
@@ -103,7 +103,6 @@ const DashboardSidebar: React.FC = () => {
             edge="start"
             onClick={handleDrawerToggle}
             sx={{
-              mr: 2,
               transition: "transform 0.3s ease",
               transform: mobileOpen ? "rotate(180deg)" : "rotate(0deg)",
             }}

@@ -15,7 +15,7 @@ import { store } from "../../../store/index";
 
 const primaryList: SidebarItemModel[] = [
   {
-    title: "My cameras",
+    title: "Cameras",
     path: "/dashboard/cameras",
     icon: <CameraAltIcon />,
   },

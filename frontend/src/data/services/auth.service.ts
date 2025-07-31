@@ -5,6 +5,7 @@ import {
   type ILoginModel,
   type AuthModel,
   type IRegisterModel,
+  type IRestoreModel,
 } from "@models/Auth.model";
 
 // DEFINE BASE URL PATH FOR API
@@ -52,6 +53,20 @@ const AuthService = {
     } catch (error) {
       console.error("Fetch auth failed:", error);
       return null;
+    }
+  },
+
+  // Sends a password restoration request to the server; returns true if successful
+  restore: async (body: IRestoreModel): Promise<boolean> => {
+    try {
+      const response = await axios.post<string>(`${BASE_URL}/restore`, body);
+      if (response.status === 200 && response.data) {
+        return true;
+      }
+      return false;
+    } catch (error) {
+      console.error("Register failed:", error);
+      return false;
     }
   },
 };

@@ -2,6 +2,7 @@ import {
   type AuthModel,
   type ILoginModel,
   type IRegisterModel,
+  type IRestoreModel,
 } from "@models/Auth.model";
 
 // Import services
@@ -51,6 +52,13 @@ const AuthProvider = {
   // Logout user by clearing Redux state
   logout: (): void => {
     store.dispatch(logoutAction());
+  },
+
+  // Sends a password reset request to the user using provided credentials
+  restore: async (credentials: IRestoreModel): Promise<boolean> => {
+    const response = await AuthService.restore(credentials);
+    if (response) return true;
+    else return false;
   },
 };
 

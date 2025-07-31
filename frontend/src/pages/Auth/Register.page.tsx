@@ -2,23 +2,25 @@ import React, { useState } from "react";
 import { Container } from "@mui/material";
 
 // Import custom components
-import SecureHeader from "@components/common/SecureHeader";
+import SecureHeader from "@components/common/SecureHeader.tsx";
 import AuthForm from "@components/auth/AuthForm";
 
 // Redux
-import { useAppDispatch } from "@hooks/redux";
+import { useAppDispatch } from "@hooks/redux.hook";
 import { showSnackbar } from "@slice/snackbar.slice";
+
+// Import form validator
+import { validateRegister } from "@utils/formValidate";
 
 // Import interfaces
 import type { FormFieldModel } from "@models/FormField.model";
 import type { IRegisterModel } from "@models/Auth.model";
-import { validateRegister } from "@utils/formValidate";
 
 // Import providers
 import AuthProvider from "@providers/auth.provider";
 
 // Import app navigation hook
-import useAppNavigation from "@hooks/useAppNavigation";
+import useAppNavigation from "@hooks/useAppNavigation.hook";
 
 const RegisterPage: React.FC = () => {
   const { navigateToPath } = useAppNavigation();
@@ -57,7 +59,7 @@ const RegisterPage: React.FC = () => {
   ];
 
   const SubmitForm = async () => {
-    const result = validateRegister(register); // Assuming 'registerFormData' holds the form data
+    const result = validateRegister(register);
 
     if (!result.isValid) {
       const messages = Object.values(result.errors).filter(Boolean).join(". ");
@@ -88,7 +90,7 @@ const RegisterPage: React.FC = () => {
       );
     }
 
-    // ✅ Navigate to dashboard/cameras
+    //  Navigate to dashboard/cameras
     navigateToPath("/dashboard/cameras");
   };
 

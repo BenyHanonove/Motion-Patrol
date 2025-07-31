@@ -18,11 +18,8 @@ const alertsSlice = createSlice({
     set: (state, action: PayloadAction<AlertModel[]>) => {
       state.list = action.payload;
     },
-    add: (state, action: PayloadAction<AlertModel>) => {
-      state.list.push(action.payload);
-    },
-    remove: (state, action: PayloadAction<string>) => {
-      state.list = state.list.filter((alert) => alert.id !== action.payload);
+    remove: (state, action: PayloadAction<AlertModel>) => {
+      state.list = state.list.filter((alert) => alert.id !== action.payload.id);
     },
     watch: (state, action: PayloadAction<AlertModel>) => {
       const alert = state.list.find((a) => a.id === action.payload.id);
@@ -32,7 +29,7 @@ const alertsSlice = createSlice({
 });
 
 // Export action creators
-export const { set, add, remove } = alertsSlice.actions;
+export const { set, remove, watch } = alertsSlice.actions;
 
 // Export reducer for store configuration
 export default alertsSlice.reducer;

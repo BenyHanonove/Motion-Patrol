@@ -2,6 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
 
+// Import custom components
 import DashboardSidebar from "@components/common/DashboardSidebar";
 
 const DashboardLayout: React.FC = () => {
@@ -15,7 +16,7 @@ const DashboardLayout: React.FC = () => {
       <Box sx={{ flex: { xs: 1, lg: 2 } }}>
         <DashboardSidebar />
       </Box>
-      <Box component="main" sx={{ flex: { xs: 1, lg: 10 } }}>
+      <Box component="main" sx={{ flex: { xs: 1, lg: 8 } }}>
         <Outlet />
       </Box>
     </Box>

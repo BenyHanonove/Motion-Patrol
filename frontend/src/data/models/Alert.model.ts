@@ -3,6 +3,16 @@ interface AlertModel {
   cameraId: string;
   timestamp: Date;
   isWatched: boolean;
+  isMotion: boolean;
+  time: {
+    start: AlertTime;
+    end: AlertTime;
+  };
 }
 
-export type { AlertModel };
+interface AlertTime {
+  hour: number;
+  mins: number;
+}
+
+export type { AlertModel, AlertTime };

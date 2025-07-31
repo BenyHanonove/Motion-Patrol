@@ -8,7 +8,7 @@ import LockIcon from "@mui/icons-material/Lock";
 import Logo from "@assets/logo.svg?react";
 
 // Import custom navigation hook
-import useAppNavigation from "@hooks/useAppNavigation";
+import useAppNavigation from "@hooks/useAppNavigation.hook";
 
 // Define props interface
 interface SecureHeaderProps {

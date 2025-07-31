@@ -41,7 +41,7 @@ const CameraProvider = {
   remove: async (camera: CameraModel, token: string): Promise<boolean> => {
     const isRemoved: boolean = await CameraService.remove(camera, token);
     if (isRemoved) {
-      store.dispatch(removeCamera(camera.id));
+      store.dispatch(removeCamera(camera));
       return true;
     } else {
       return false;

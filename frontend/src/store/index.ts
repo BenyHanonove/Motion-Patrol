@@ -11,14 +11,18 @@ import {
 } from "redux-persist";
 
 // Import slices
-import authReducer from "./slice/auth.slice";
-import cameraReducer from "./slice/camera.slice";
-import snackbarReducer from "./slice/snackbar.slice";
+import alertReducer from "@slice/alert.slice";
+import authReducer from "@slice/auth.slice";
+import cameraReducer from "@slice/camera.slice";
+import captureReducer from "@slice/capture.slice";
+import snackbarReducer from "@slice/snackbar.slice";
 
 // Combine reducers
 const rootReducer = combineReducers({
+  alert: alertReducer,
   auth: authReducer,
   camera: cameraReducer,
+  capture: captureReducer,
   snackbar: snackbarReducer,
 });
 

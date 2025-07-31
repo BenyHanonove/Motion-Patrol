@@ -2,7 +2,7 @@ import React from "react";
 import { Snackbar, Alert } from "@mui/material";
 
 // Import redux
-import { useAppDispatch, useAppSelector } from "@hooks/redux";
+import { useAppDispatch, useAppSelector } from "@hooks/redux.hook";
 import { hideSnackbar } from "../../store/slice/snackbar.slice";
 import type { Dispatch } from "@reduxjs/toolkit";
 
@@ -15,7 +15,7 @@ const GlobalSnackbar: React.FC = () => {
   return (
     <Snackbar
       open={open}
-      anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+      anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
       autoHideDuration={duration}
       onClose={() => dispatch(hideSnackbar())}
     >
@@ -23,7 +23,7 @@ const GlobalSnackbar: React.FC = () => {
         onClose={() => dispatch(hideSnackbar())}
         severity={severity}
         variant="filled"
-        sx={{ color: "white", px: 2 }}
+        sx={{ color: "white", px: 2, minWidth: 300 }}
       >
         {message}
       </Alert>

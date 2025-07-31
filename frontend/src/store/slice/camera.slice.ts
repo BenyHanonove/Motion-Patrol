@@ -21,8 +21,10 @@ const camerasSlice = createSlice({
     add: (state, action: PayloadAction<CameraModel>) => {
       state.list.push(action.payload);
     },
-    remove: (state, action: PayloadAction<string>) => {
-      state.list = state.list.filter((camera) => camera.id !== action.payload);
+    remove: (state, action: PayloadAction<CameraModel>) => {
+      state.list = state.list.filter(
+        (camera) => camera.id !== action.payload.id
+      );
     },
   },
 });
