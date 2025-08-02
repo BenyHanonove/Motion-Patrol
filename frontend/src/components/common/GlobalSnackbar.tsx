@@ -14,6 +14,7 @@ const GlobalSnackbar: React.FC = () => {
 
   return (
     <Snackbar
+      sx={{ zIndex: 99 }}
       open={open}
       anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
       autoHideDuration={duration}

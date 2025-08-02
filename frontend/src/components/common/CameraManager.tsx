@@ -14,6 +14,7 @@ interface CameraManagerProps {
   onRemove: (camera: CameraModel) => void;
   onMoveUp: (camera: CameraModel) => void;
   onMoveDown: (camera: CameraModel) => void;
+  openForm: () => void;
 }
 
 const CameraManager: React.FC<CameraManagerProps> = ({
@@ -21,6 +22,7 @@ const CameraManager: React.FC<CameraManagerProps> = ({
   onRemove,
   onMoveUp,
   onMoveDown,
+  openForm,
 }) => {
   return (
     <Box
@@ -43,7 +45,7 @@ const CameraManager: React.FC<CameraManagerProps> = ({
             alignItems: "center",
           }}
         >
-          <Typography>{camera.cameraName}</Typography>
+          <Typography>{camera.title}</Typography>
 
           <Box sx={{ display: "flex", flexDirection: "row" }}>
             <Box>
@@ -71,7 +73,9 @@ const CameraManager: React.FC<CameraManagerProps> = ({
           flex: 1,
         }}
       >
-        <Button variant="contained">Add camera</Button>
+        <Button variant="contained" onClick={openForm}>
+          Add camera
+        </Button>
       </Box>
     </Box>
   );

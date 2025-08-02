@@ -21,6 +21,11 @@ const AlertsPage: React.FC = () => {
     cameraId: "camera-123",
     timestamp: new Date(),
     isWatched: false,
+    isMotion: true,
+    time: {
+      start: { hour: 22, mins: 15 },
+      end: { hour: 7, mins: 0 },
+    },
   };
 
   // Initialize Redux dispatch function

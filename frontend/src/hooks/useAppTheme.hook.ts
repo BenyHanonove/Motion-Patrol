@@ -5,10 +5,10 @@ const useAppTheme = () => {
   const theme = useTheme();
 
   return {
-    theme, // full theme object
-    primaryColor: theme.palette.primary.main, // primary color
-    isDarkMode: theme.palette.mode === "dark", // dark mode flag
-    contrastText: theme.palette.primary.contrastText, // contrast text color
+    theme,
+    primaryColor: theme.palette.primary.main,
+    isDarkMode: theme.palette.mode === "dark",
+    contrastText: theme.palette.primary.contrastText,
   };
 };
 

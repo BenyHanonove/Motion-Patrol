@@ -10,7 +10,7 @@ interface CameraCardProps {
   index: number;
 }
 
-const CameraCard: React.FC<CameraCardProps> = ({ camera, index }) => {
+const CameraCard: React.FC<CameraCardProps> = ({ camera }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleFullscreen = () => {
@@ -39,9 +39,7 @@ const CameraCard: React.FC<CameraCardProps> = ({ camera, index }) => {
             alignItems: "center",
           }}
         >
-          <Typography variant="h6">
-            {`${camera.cameraName} (Camera #${index + 1})`}
-          </Typography>
+          <Typography variant="h6">{camera.title}</Typography>
           <IconButton onClick={handleFullscreen}>
             <FullscreenIcon />
           </IconButton>
@@ -58,7 +56,7 @@ const CameraCard: React.FC<CameraCardProps> = ({ camera, index }) => {
         >
           <img
             src={camera.streamUrl}
-            alt={`${camera.cameraName} feed`}
+            alt={`${camera.title} feed`}
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
         </Box>

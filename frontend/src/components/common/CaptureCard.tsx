@@ -1,8 +1,5 @@
 import React, { useRef } from "react";
-import { Typography, IconButton, Box } from "@mui/material";
-
-// Import custom hooks
-import useAppTheme from "@hooks/useAppTheme.hook";
+import { Typography, Box, Button } from "@mui/material";
 
 // Import custom hooks
 import type { CaptureModel } from "@models/Capture.model";
@@ -22,8 +19,6 @@ const CaptureCard: React.FC<CaptureCardProps> = ({
   onRemove,
   onDownload,
 }) => {
-  const appTheme = useAppTheme();
-
   const imgRef = useRef<HTMLImageElement | null>(null);
 
   const handleFullscreen = () => {
@@ -78,16 +73,12 @@ const CaptureCard: React.FC<CaptureCardProps> = ({
           gap: 2,
         }}
       >
-        <IconButton
+        <Button
+          variant="contained"
           onClick={() => onRemove(capture)}
           sx={{
             flex: 1,
             borderRadius: 1,
-            backgroundColor: appTheme.theme.palette.error.main,
-            color: "white",
-            "&:focus": {
-              backgroundColor: appTheme.theme.palette.error.main,
-            },
           }}
         >
           <Box
@@ -102,18 +93,15 @@ const CaptureCard: React.FC<CaptureCardProps> = ({
             <DeleteIcon />
             <Typography>Remove</Typography>
           </Box>
-        </IconButton>
+        </Button>
 
-        <IconButton
+        <Button
+          variant="contained"
+          color="info"
           onClick={() => onDownload(capture)}
           sx={{
             flex: 1,
             borderRadius: 1,
-            backgroundColor: appTheme.theme.palette.success.main,
-            color: "white",
-            "&:focus": {
-              backgroundColor: appTheme.theme.palette.success.main,
-            },
           }}
         >
           <Box
@@ -128,7 +116,7 @@ const CaptureCard: React.FC<CaptureCardProps> = ({
             <DownloadIcon />
             <Typography>Download</Typography>
           </Box>
-        </IconButton>
+        </Button>
       </Box>
     </Box>
   );

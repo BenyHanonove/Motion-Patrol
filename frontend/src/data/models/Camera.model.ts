@@ -1,8 +1,13 @@
 interface CameraModel {
   id: string;
   ownerId: string;
-  cameraName: string;
+  title: string;
   streamUrl: string;
 }
 
-export type { CameraModel };
+interface IRegisterCamera {
+  title: string;
+  streamUrl: string;
+}
+
+export type { CameraModel, IRegisterCamera };

@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Typography, IconButton, Box } from "@mui/material";
+import { Card, Typography, Box, Button } from "@mui/material";
 
 // Import custom hooks
 import useAppTheme from "@hooks/useAppTheme.hook";
@@ -39,44 +39,47 @@ const AlertCard: React.FC<AlertCardProps> = ({ alert, onWatch, onRemove }) => {
 
       <Box sx={{ display: "flex", flexDirection: "row", gap: 2 }}>
         {alert.isWatched ? (
-          <IconButton
+          <Button
             disabled
             sx={{
               borderRadius: 1,
-              backgroundColor: appTheme.theme.palette.background.paper,
             }}
           >
-            <MinusIcon />
-          </IconButton>
+            <MinusIcon
+              sx={{
+                color: appTheme.theme.palette.text.primary,
+              }}
+            />
+          </Button>
         ) : (
-          <IconButton
+          <Button
             onClick={() => onWatch(alert)}
             sx={{
               borderRadius: 1,
               backgroundColor: appTheme.theme.palette.primary.main,
-              color: "white",
-              "&:focus": {
-                backgroundColor: appTheme.theme.palette.primary.main,
-              },
             }}
           >
-            <CheckIcon />
-          </IconButton>
+            <CheckIcon
+              sx={{
+                color: appTheme.theme.palette.text.primary,
+              }}
+            />
+          </Button>
         )}
 
-        <IconButton
+        <Button
           onClick={() => onRemove(alert)}
           sx={{
             borderRadius: 1,
             backgroundColor: appTheme.theme.palette.error.main,
-            color: "white",
-            "&:focus": {
-              backgroundColor: appTheme.theme.palette.error.main,
-            },
           }}
         >
-          <DeleteIcon />
-        </IconButton>
+          <DeleteIcon
+            sx={{
+              color: appTheme.theme.palette.text.primary,
+            }}
+          />
+        </Button>
       </Box>
     </Card>
   );
