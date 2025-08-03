@@ -1,14 +1,15 @@
 // Import interfaces
-import type { CameraModel } from "@models/Camera.model";
+import type { CameraModel, IRegisterCamera } from "@models/Camera.model";
 
 // Import services
-import CameraService from "src/data/services/camera.service";
+import CameraService from "@services/camera.service";
 
 // Import Redux actions
 import {
   set as setCameras,
   add as addCamera,
   remove as removeCamera,
+  update as updateCamera,
 } from "@slice/camera.slice";
 
 // Import Redux store or dispatch hook
@@ -27,10 +28,27 @@ const CameraProvider = {
   },
 
   // Adds a new camera via API and dispatches it to Redux store
-  add: async (camera: CameraModel): Promise<boolean> => {
-    const addedCamera: CameraModel | null = await CameraService.add(camera);
+  add: async (camera: IRegisterCamera, token: string): Promise<boolean> => {
+    const addedCamera: CameraModel | null = await CameraService.add(
+      camera,
+      token
+    );
     if (addedCamera) {
       store.dispatch(addCamera(addedCamera));
+      return true;
+    } else {
+      return false;
+    }
+  },
+
+  // update information camera via API and dispatches it to Redux store
+  update: async (camera: IRegisterCamera, token: string): Promise<boolean> => {
+    const updated: CameraModel | null = await CameraService.update(
+      camera,
+      token
+    );
+    if (updated) {
+      store.dispatch(updateCamera(updated));
       return true;
     } else {
       return false;

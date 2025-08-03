@@ -12,7 +12,7 @@ const CamerasPage: React.FC = () => {
   const exampleCamera: CameraModel = {
     id: "cam123",
     ownerId: "user456",
-    cameraName: "Front Yard",
+    title: "Front Yard",
     streamUrl: "http://75.149.26.30:1024/cam_1.jpg?uniq=0.33135288353656145",
   };
 

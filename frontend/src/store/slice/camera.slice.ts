@@ -21,6 +21,14 @@ const camerasSlice = createSlice({
     add: (state, action: PayloadAction<CameraModel>) => {
       state.list.push(action.payload);
     },
+
+    update: (state, action: PayloadAction<CameraModel>) => {
+      const camera = state.list.find((c) => c.id === action.payload.id);
+      if (camera) {
+        camera.title = action.payload.title;
+        camera.streamUrl = action.payload.streamUrl;
+      }
+    },
     remove: (state, action: PayloadAction<CameraModel>) => {
       state.list = state.list.filter(
         (camera) => camera.id !== action.payload.id
@@ -30,7 +38,7 @@ const camerasSlice = createSlice({
 });
 
 // Export action creators
-export const { set, add, remove } = camerasSlice.actions;
+export const { set, add, update, remove } = camerasSlice.actions;
 
 // Export reducer for store configuration
 export default camerasSlice.reducer;

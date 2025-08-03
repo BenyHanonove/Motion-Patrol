@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, IconButton, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 
 // Import interfaces
 import type { CameraModel } from "@models/Camera.model";
@@ -14,7 +14,6 @@ interface CameraManagerProps {
   onRemove: (camera: CameraModel) => void;
   onMoveUp: (camera: CameraModel) => void;
   onMoveDown: (camera: CameraModel) => void;
-  openForm: () => void;
 }
 
 const CameraManager: React.FC<CameraManagerProps> = ({
@@ -22,7 +21,6 @@ const CameraManager: React.FC<CameraManagerProps> = ({
   onRemove,
   onMoveUp,
   onMoveDown,
-  openForm,
 }) => {
   return (
     <Box
@@ -72,11 +70,7 @@ const CameraManager: React.FC<CameraManagerProps> = ({
           justifyContent: "end",
           flex: 1,
         }}
-      >
-        <Button variant="contained" onClick={openForm}>
-          Add camera
-        </Button>
-      </Box>
+      ></Box>
     </Box>
   );
 };
