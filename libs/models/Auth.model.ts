@@ -1,7 +1,9 @@
 interface AuthModel {
-  id: string;
-  token: string;
+   id: string;
   email: string;
+  password: string;
+  refreshToken: string | null;
+  createdAt: Date;
 }
 
 interface ILoginModel {

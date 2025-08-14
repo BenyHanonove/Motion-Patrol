@@ -16,6 +16,13 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false,
     "strictBindCallApply": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@config/*": ["src/config/*"],
+      "@db/*": ["src/db/*"],
+      "@modules/*": ["src/modules/*"],
+      "@enum/*": ["src/enum/*"],
+      "@interfaces/*": ["src/interfaces/*"]
+    }
   }
 }

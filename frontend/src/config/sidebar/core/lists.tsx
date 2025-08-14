@@ -1,5 +1,4 @@
 // Import interfaces
-import { type SidebarItemModel } from "@models/SidebarItem";
 
 // Import icons
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
@@ -13,9 +12,13 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import { logout } from "../../../store/slice/auth.slice";
 import { store } from "../../../store/index";
 
+// Import interfaces
+import type { SidebarItemModel } from "@interfaces/SidebarItem.model";
+
 const primaryList: SidebarItemModel[] = [
   {
     title: "Cameras",
+
     path: "/dashboard/cameras",
     icon: <CameraAltIcon />,
   },

@@ -1,5 +1,5 @@
 // Import interfaces
-import type { CaptureModel } from "@models/Capture.model";
+import type { CaptureModel } from "@models";
 
 // Import services
 import CaptureService from "@services/capture.service";

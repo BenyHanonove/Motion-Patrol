@@ -1,5 +1,5 @@
 // Import interfaces
-import type { PermissionModel } from "@models/Permission.mode";
+import type { PermissionModel } from "@models";
 
 // Import services
 import PermissionService from "@services/permission.service";

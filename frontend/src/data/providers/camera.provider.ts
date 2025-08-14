@@ -1,5 +1,5 @@
 // Import interfaces
-import type { CameraModel, IRegisterCamera } from "@models/Camera.model";
+import type { CameraModel, IRegisterCamera } from "@models";
 
 // Import services
 import CameraService from "@services/camera.service";

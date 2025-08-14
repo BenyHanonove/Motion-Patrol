@@ -21,15 +21,10 @@ import CloseIcon from "@mui/icons-material/Close";
 import useAppTheme from "@hooks/useAppTheme.hook";
 import useAppNavigation from "@hooks/useAppNavigation.hook";
 
-// Import sidebar lists
-import {
-  primaryList,
-  secondaryList,
-  finalList,
-} from "../../config/sidebar/index";
-
 // Import interfaces
-import type { SidebarItemModel } from "@models/SidebarItem";
+import type { SidebarItemModel } from "@interfaces/SidebarItem.model";
+
+import { primaryList, secondaryList, finalList } from "@config/sidebar/index";
 
 const DashboardSidebar: React.FC = () => {
   // Load app navigation hook

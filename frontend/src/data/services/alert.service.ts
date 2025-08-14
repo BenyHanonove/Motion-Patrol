@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Import interfaces
-import type { AlertModel } from "@models/Alert.model";
+import type { AlertModel } from "@models";
 
 // DEFINE BASE URL PATH FOR API
 const BASE_URL = "https://localhost:3001/alert";

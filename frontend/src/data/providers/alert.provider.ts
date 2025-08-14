@@ -1,5 +1,5 @@
 // Import interfaces
-import type { AlertModel } from "@models/Alert.model";
+import type { AlertModel } from "@models";
 
 // Import services
 import AlertService from "@services/alert.service";

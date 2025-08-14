@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Import interfaces
-import type { PermissionModel } from "@models/Permission.mode";
+import type { PermissionModel } from "@models";
 
 // DEFINE BASE URL PATH FOR API
 const BASE_URL = "https://localhost:3001/premisson";

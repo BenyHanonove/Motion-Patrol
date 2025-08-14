@@ -3,7 +3,7 @@ import {
   type ILoginModel,
   type IRegisterModel,
   type IRestoreModel,
-} from "@models/Auth.model";
+} from "@models";
 
 // Import services
 import AuthService from "@services/auth.service";

@@ -6,7 +6,7 @@ import {
   type AuthModel,
   type IRegisterModel,
   type IRestoreModel,
-} from "@models/Auth.model";
+} from "@models";
 
 // DEFINE BASE URL PATH FOR API
 const BASE_URL = "https://localhost:3001/auth";

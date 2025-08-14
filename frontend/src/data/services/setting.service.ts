@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Import interfaces
-import type { SettingsModel } from "@models/Settings.model";
+import type { SettingsModel } from "@models";
 
 // DEFINE BASE URL PATH FOR API
 const BASE_URL = "https://localhost:3001/setting";

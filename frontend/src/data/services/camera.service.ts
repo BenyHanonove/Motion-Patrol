@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Import interfaces
-import type { CameraModel, IRegisterCamera } from "@models/Camera.model";
+import type { CameraModel, IRegisterCamera } from "@models";
 
 // DEFINE BASE URL PATH FOR API
 const BASE_URL = "https://localhost:3001/camera";

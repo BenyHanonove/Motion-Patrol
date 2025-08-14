@@ -1,5 +1,5 @@
 // Import interfaces
-import type { SettingsModel } from "@models/Settings.model";
+import type { SettingsModel } from "@models";
 
 // Import services
 import SettingService from "@services/setting.service";
@@ -12,7 +12,7 @@ import { store } from "@store";
 
 const SettingProvider = {
   fetch: async (token: string): Promise<boolean> => {
-    const setting: SettingsModel | null = await SettingService.get(token);
+    const setting: SettingsModel | null = await SettingService.fetch(token);
     if (setting) {
       store.dispatch(setSetting(setting));
       return true;
